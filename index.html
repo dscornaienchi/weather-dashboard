@@ -31,31 +31,40 @@
         <h1>Weather Dashboard</h1>
     </header>
     
-    <section>
-        <h2>Search for a City:</h2>
-        <form id="city-form">
-            <input type="text" class="form-input w-100" id="city-input" name="city-input" placeholder="Enter city name" />
-            <button class="btn btn-info">Search</button>
-        </form>
-
-        <ul id="city-list"></ul>
-    </section>
-
-    <section>
-        <h2>Placeholder for City Name from API</h2>
-
-    </section>
-
-    <section>
-        <h3>5-Day Forecast:</h3>
-
-        
-    </section>
-
-
+    <div class="container">
+        <div class="row">
+            <!-- City Search Section -->
+            <section id="city-search" class="col-md-4">
+                <h2>Search for a City:</h2>
+                <form id="city-form">
+                    <input type="text" class="form-input w-100" id="city-input" name="city-input" placeholder="Enter city name" />
+                    <button class="btn btn-info" id="save-city-button">Search</button>
+                    <button class="btn btn-danger" id="reset-city-list-button">Reset</button>
+                </form>
+                <ul id="city-list"></ul>
+            </section>
+            
+            <!-- City Weather and Forecast Sections -->
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- City Weather Section -->
+                    <section id="city-weather" class="col-md-12">
+                        <h2>Placeholder for City Name from API</h2>
+                        <!--... (city weather content)...-->
+                    </section>
+                </div>
+                <div class="row">
+                    <!-- City Forecast Section -->
+                    <section id="city-forecast" class="col-md-12">
+                        <h3>5-Day Forecast:</h3>
+                        <!-- ... (forecast content) ... -->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>   
-    
     <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
