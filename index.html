@@ -51,19 +51,74 @@
                     <!-- City Weather Section -->
                     <div class="card">
                         <section id="city-weather" class="col-md-12">
-                            <h2>Placeholder for City Name from API</h2>
-                            <!--... (city weather content)...-->
+                            <h2>CityName M/DD/YYYY icon</h2>
+                            <h4>Temp: </h4>
+                            <h4>Wind: </h4>
+                            <h4>Humidity: </h4>
                         </section>
                     </div>
                 </div>
                 <div class="row" id="city-forecast-shell">
                     <!-- City Forecast Section -->
-                    <div class="card">
-                        <section id="city-forecast" class="col-md-12">
-                            <h3>5-Day Forecast:</h3>
-                            <!-- ... (forecast content) ... -->
-                        </section>
-                    </div>
+                    <section id="city-forecast" class="col-md-12">
+                        <h3>5-Day Forecast:</h3>
+                        <div class="card-container d-flex flex-row">
+                            <div class="card">
+                                <article id="Day-1">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humidity: </h4>
+                                </article>
+                            </div>
+                            <div class="card">
+                                <article id="Day-2">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humidity: </h4>
+                                </article>
+                            </div>
+                            <div class="card">
+                                <article id="Day-1">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humidity: </h4>
+                                </article>
+                            </div>
+                            <div class="card">
+                                <article id="Day-3">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humidity: </h4>
+                                </article>
+                            </div>
+                            <div class="card">
+                                <article id="Day-4">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humidity: </h4>
+                                </article>
+                            </div>
+                            <div class="card">
+                                <article id="Day-5">
+                                    <h4>M/DD/YYYY</h4>
+                                    <h4>Icon </h4>
+                                    <h4>Temp: </h4>
+                                    <h4>Wind: </h4>
+                                    <h4>Humdity: </h4>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -71,5 +126,9 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>   
     <script src="./assets/javascript/script.js"></script>
+    <!-- Day JS -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
 </body>
 </html>

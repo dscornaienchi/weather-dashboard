@@ -1,7 +1,10 @@
+
+$(function () {
 var cityInput = document.getElementById('city-input');
 var cityListElement = document.getElementById('city-list');
 var saveCityButton = document.getElementById('save-city-button');
 var resetCityListButton = document.getElementById('reset-city-list-button');
+//var currentDate = dayjs().format('MM/DD/YYYY') $('#currentDay').text(currentDate);
 
 let cityList = JSON.parse(localStorage.getItem('cityList')) || [];
 
@@ -42,3 +45,5 @@ function resetCityList(event) {
 }
 
 showCities();
+
+});
