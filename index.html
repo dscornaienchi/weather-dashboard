@@ -37,28 +37,33 @@
             <section id="city-search" class="col-md-4">
                 <h2>Search for a City:</h2>
                 <form id="city-form">
-                    <input type="text" class="form-input w-100" id="city-input" name="city-input" placeholder="Enter city name" />
-                    <button class="btn btn-info" id="save-city-button">Search</button>
-                    <button class="btn btn-danger" id="reset-city-list-button">Reset</button>
+                    <input type="text" class="form-control" id="city-input" name="city-input" placeholder="Enter city name" />
+                    <button class="btn btn-primary" id="save-city-button">Search</button>
+                    <button class="btn btn-info" id="reset-city-list-button">Reset</button>
                 </form>
-                <ul id="city-list"></ul>
+                <hr></hr>
+                <ul id="city-list" class="list-group mt-3"></ul>
             </section>
             
             <!-- City Weather and Forecast Sections -->
             <div class="col-md-8">
-                <div class="row">
+                <div class="row" id="city-weather-shell">
                     <!-- City Weather Section -->
-                    <section id="city-weather" class="col-md-12">
-                        <h2>Placeholder for City Name from API</h2>
-                        <!--... (city weather content)...-->
-                    </section>
+                    <div class="card">
+                        <section id="city-weather" class="col-md-12">
+                            <h2>Placeholder for City Name from API</h2>
+                            <!--... (city weather content)...-->
+                        </section>
+                    </div>
                 </div>
-                <div class="row">
+                <div class="row" id="city-forecast-shell">
                     <!-- City Forecast Section -->
-                    <section id="city-forecast" class="col-md-12">
-                        <h3>5-Day Forecast:</h3>
-                        <!-- ... (forecast content) ... -->
-                    </section>
+                    <div class="card">
+                        <section id="city-forecast" class="col-md-12">
+                            <h3>5-Day Forecast:</h3>
+                            <!-- ... (forecast content) ... -->
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
