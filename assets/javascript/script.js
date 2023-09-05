@@ -1,5 +1,9 @@
 
 $(function () {
+//var APIKey = "e8dad390ebbd6c69a9686f2a12eedb94";
+//var city;
+//var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+//var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
 var cityInput = document.getElementById('city-input');
 var cityListElement = document.getElementById('city-list');
 var saveCityButton = document.getElementById('save-city-button');
@@ -10,6 +14,10 @@ let cityList = JSON.parse(localStorage.getItem('cityList')) || [];
 
 saveCityButton.addEventListener('click', saveCity);
 resetCityListButton.addEventListener('click',resetCityList);
+
+//fetch(queryURL)
+
+//fetch(forecastURL)
 
 function saveCity(event) {
     event.preventDefault();
