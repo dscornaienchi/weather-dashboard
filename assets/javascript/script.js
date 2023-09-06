@@ -4,27 +4,11 @@ var APIKey = "e8dad390ebbd6c69a9686f2a12eedb94";
 var cityInput = document.getElementById('city-input');
 var cityWeather = document.getElementById('city-weather');
 var cityListElement = document.getElementById('city-list');
-var saveCityButton = document.getElementById('save-city-button');
 var resetCityListButton = document.getElementById('reset-city-list-button');
+
 var cityList = JSON.parse(localStorage.getItem('cityList')) || [];
-//var lat;
-//var lon;
-//var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
 
 resetCityListButton.addEventListener('click',resetCityList);
-
-function updateCityWeather(cityName, weatherData, tempKelvin, wind, humidity) {
-    var tempFahrenheit = Math.round((tempKelvin - 273.15) * 9/5 + 32);
-    var weatherIconCode = weatherData[0].icon;
-    var iconURL = `http://openweathermap.org/img/w/${weatherIconCode}.png`;
-    cityWeather.innerHTML = `
-    <h2>${cityName} ${dayjs().format('M/DD/YYYY')}</h2>
-    <img src="${iconURL}" alt="Weather Icon">
-    <h4>Temp: ${tempFahrenheit}°F</h4>
-    <h4>Wind: ${wind} MPH</h4>
-    <h4>Humidity: ${humidity}%</h4>
-    `;
-}
 
 $('#save-city-button').on('click',function(event) {
     event.preventDefault();
@@ -50,26 +34,36 @@ $('#save-city-button').on('click',function(event) {
             .catch(function (error) {
                 console.log(error);
                 alert('Error fetching weather data. Please try again.');
-            })
+            });
 
+        // 5 day forecast attempt begins here
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         cityList.push({city: city});
         localStorage.setItem('cityList', JSON.stringify(cityList));
         showCities();
     }
 });
 
-function saveCity(event) {
-    event.preventDefault();
-    const city = cityInput.value.trim();
-    if (city === "") {
-        alert('Please enter a city name');
-    } else {
-        const newCity = { city };
-
-        cityList.push(newCity);
-        localStorage.setItem('cityList', JSON.stringify(cityList));
-        showCities();
-    }
+function updateCityWeather(cityName, weatherData, tempKelvin, wind, humidity) {
+    var tempFahrenheit = Math.round((tempKelvin - 273.15) * 9/5 + 32);
+    var weatherIconCode = weatherData[0].icon;
+    var iconURL = `http://openweathermap.org/img/w/${weatherIconCode}.png`;
+    cityWeather.innerHTML = `
+    <h2>${cityName} ${dayjs().format('M/DD/YYYY')}</h2>
+    <img src="${iconURL}" alt="Weather Icon">
+    <h4>Temp: ${tempFahrenheit}°F</h4>
+    <h4>Wind: ${wind} MPH</h4>
+    <h4>Humidity: ${humidity}%</h4>
+    `;
 }
 
 function showCities() {
@@ -96,7 +90,5 @@ function resetCityList(event) {
         `;
     showCities();
 }
-
-showCities();
 
 });
