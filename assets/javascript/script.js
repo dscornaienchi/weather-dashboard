@@ -113,6 +113,19 @@ function resetCityList(event) {
     event.preventDefault();
     localStorage.removeItem('cityList');
     cityList = [];
+
+    var forecastCards = document.querySelectorAll(".card-container .card");
+
+    forecastCards.forEach(function (card) {
+        card.querySelector("article").innerHTML = `
+        <h4><br></h4>
+        <h4><br></h4>
+        <h4>Temp: </h4>
+        <h4>Wind: </h4>
+        <h4>Humidity: </h4>
+        `;
+    });
+    
     cityWeather.innerHTML = `
         <h2>Please enter a city name</h2>
         <h4>Temp: </h4>
