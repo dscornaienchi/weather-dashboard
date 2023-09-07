@@ -54,7 +54,6 @@ $(function () {
                                     var forecastWind = forecastItem.wind.speed;
                                     var forecastHumidity = forecastItem.main.humidity;
 
-                                    // Pass the card ID (e.g., "Day-1", "Day-2", etc.) to update the correct card
                                     updateCityForecast(dayNumber, forecastDate, forecastIconCode, forecastTemp, forecastWind, forecastHumidity, `Day-${dayNumber}`);
                                     dayNumber++;
                                 }
@@ -80,11 +79,13 @@ $(function () {
         var forecastTempFahrenheit = Math.round((forecastTempKelvin - 273.15) * 9/5 + 32);
         var forecastIconURL = `https://openweathermap.org/img/w/${forecastIconCode}.png`;
 
+        var formattedDate = dayjs(forecastDate).format('M/DD/YYYY');
+
         var forecastDayElement = document.getElementById(cardId);
 
         if (forecastDayElement) {
             forecastDayElement.innerHTML = `
-                <h4>${forecastDate}</h4>
+                <h4>${formattedDate}</h4>
                 <img src="${forecastIconURL}" alt="Weather Icon">
                 <h4>Temp: ${forecastTempFahrenheit}°F</h4>
                 <h4>Wind: ${forecastWind} MPH</h4>
@@ -123,7 +124,6 @@ $(function () {
         localStorage.removeItem('cityList');
         cityList = [];
 
-        // Clear forecast data without removing cards
         var forecastDays = document.querySelectorAll(".card-container .card");
         forecastDays.forEach(function (forecastDay) {
             forecastDay.innerHTML = `
