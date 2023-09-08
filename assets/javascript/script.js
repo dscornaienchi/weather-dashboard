@@ -109,15 +109,27 @@ $(function () {
 
     function showCities() {
         cityListElement.innerHTML = '';
+        var uniqueCities = [];
+    
         cityList.forEach(function (cityObj) {
-            var li = document.createElement('li');
-            li.textContent = cityObj.city;
-
-            li.classList.add('list-group-item', 'list-group-item-dark', 'text-center', 'mb-2', 'rounded');
-
-            cityListElement.appendChild(li);
+            if (!uniqueCities.includes(cityObj.city)) {
+                uniqueCities.push(cityObj.city);
+                var li = document.createElement('li');
+                var cityButton = document.createElement('button');
+                cityButton.textContent = cityObj.city;
+                cityButton.classList.add('list-group-item', 'list-group-item-dark', 'text-center', 'mb-2', 'rounded', 'full-width-button');
+    
+                cityButton.addEventListener('click', function () {
+                    cityInput.value = cityObj.city;
+                    $(`#save-city-button`).click();
+                });
+    
+                li.appendChild(cityButton);
+                cityListElement.appendChild(li);
+            }
         });
     }
+     
 
     function resetCityList(event) {
         event.preventDefault();

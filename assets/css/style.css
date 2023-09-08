@@ -36,6 +36,16 @@ h5 {
     padding: 10px;
 }
 
+.full-width-button {
+    width: 100%;
+    padding: 0.375rem 0.5rem; 
+    margin-top: 5px;
+}
+
+#city-list {
+    list-style: none;
+}
+
 #city-weather-shell,
 #city-forecast-shell {
     padding: 10px;
@@ -49,7 +59,7 @@ h5 {
 }
 
 .card {
-    margin-right: 20px; /* Adjust as needed */
+    margin-right: 20px;
     background-color: rgb(218, 214, 214);
     padding: 10px;
     white-space: nowrap;

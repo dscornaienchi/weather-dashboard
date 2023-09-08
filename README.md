@@ -19,7 +19,7 @@ The website can be found at the URL here: https://dscornaienchi.github.io/weathe
 
 The website should look like the screenshot shown below: 
 
-<img src="./" alt="Website Screenshot">
+<img src="./assets/images/Website Screenshot.jpg" alt="Website Screenshot">
 
 ## Credits
 
